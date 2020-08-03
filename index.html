@@ -20,17 +20,22 @@
   <!-- gabdown -->
   <script src="https://gabrielamp.github.io/gabdown/gabdown.js"></script>
 
-  <!-- Autorender gabdown -->
-  <script src="https://gabrielamp.github.io/gabdown/autorender.js"></script>
 
   <!-- The LaTeX font we want -->
   <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/dreampulse/computer-modern-web-font/master/fonts.css">
 
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="preview.css">
 
   <script src="custom-elements.js"></script>
+
+  <script src="script.js"></script>
 </head>
 <body>
-
+  <header>
+    <span id="title">Gabdown Preview</span>
+    <button id="fullscreen-button">Toggle Fullscreen</button>
+  </header>
+  <textarea id="code"></textarea>
+  <div id="content"></div>
 </body>
 </html>
