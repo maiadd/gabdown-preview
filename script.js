@@ -1,8 +1,10 @@
 let codeElement;
 let contentElement;
 let fullscreenButton;
+let downloadLink;
 
 function handleInput() {
+  downloadLink.href = getDataUrl(codeElement.value);
   gabify(contentElement, codeElement.value);
 }
 
@@ -10,12 +12,18 @@ function handleFullscreenButton() {
   document.body.classList.toggle("fullscreen");
 }
 
+function getDataUrl(s) {
+  let encodedData = window.btoa(s);
+  let dataUrl = `data:text/plain;base64,${encodedData}`;
+  return dataUrl;
+}
+
 window.onload = () => {
-  console.log("hello world");
   codeElement = document.getElementById("code");
+  codeElement.addEventListener("input", handleInput);
   contentElement = document.getElementById("content");
   contentElement.innerHTML = "hello";
-  codeElement.addEventListener("input", handleInput);
+  downloadLink = document.getElementById("download-link");
   fullscreenButton = document.getElementById("fullscreen-button");
   fullscreenButton.addEventListener("click", handleFullscreenButton);
   fetch("index.gd")
@@ -24,4 +32,5 @@ window.onload = () => {
       codeElement.value = text;
       handleInput();
     });
+
 }

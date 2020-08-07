@@ -27,7 +27,7 @@ body {
                  1fr;
 }
 
-.fullscreen #code {
+.fullscreen textarea#code {
   display: none;
 }
 
@@ -48,16 +48,20 @@ header {
   padding: 0.5em;
 }
 
-button {
+button, header a {
   font-family: "Computer Modern Serif";
   font-weight: bold;
   font-size: large;
   background-color: transparent;
   border: none;
   outline: none;
+  margin-left: 1ch;
+  margin-right: 1ch;
+  color: black;
+  text-decoration: none;
 }
 
-button:hover {
+button:hover, header a:hover {
   color: gray;
 }
 
@@ -67,7 +71,7 @@ button:hover {
   font-weight: bold;
 }
 
-#code {
+textarea#code {
   grid-area: m;
   overflow-y: scroll;
   outline: none;
